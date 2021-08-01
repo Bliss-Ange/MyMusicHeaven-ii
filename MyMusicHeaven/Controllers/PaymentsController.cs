@@ -20,7 +20,7 @@ namespace MyMusicHeaven.Controllers
             _context = context;
         }
 
-        [Authorize(Roles ="Admin")]
+        /*[Authorize(Roles = "Admin")]*/
         // GET: Payments
         public async Task<IActionResult> Index()
         {
@@ -34,8 +34,9 @@ namespace MyMusicHeaven.Controllers
             {
                 return NotFound();
             }
-
+            
             var payment = await _context.Payment
+            
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (payment == null)
             {
@@ -57,6 +58,28 @@ namespace MyMusicHeaven.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,CustomerName,PaymentDate,TotalPayment")] Payment payment)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(payment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(payment);
+        }
+
+        // GET: Payments/CreateCC
+        public IActionResult CreateCC()
+        {
+            return View();
+        }
+
+        // POST: Payments/CreateCC
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateCC([Bind("ID,CustomerName,PaymentDate,TotalPayment")] Payment payment)
         {
             if (ModelState.IsValid)
             {

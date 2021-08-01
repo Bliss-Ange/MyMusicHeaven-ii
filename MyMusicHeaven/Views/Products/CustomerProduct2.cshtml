@@ -83,13 +83,13 @@
                         <img id="profilePicture" style="width:350px;height:350px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(item.ProductPicture))" style="width:100%">
                     }
                     <span class="w3-tag w3-display-topleft">New Product</span>
-                    <div class="w3-display-middle w3-display-hover">
-                        <a asp-action="Edit" asp-route-id="@item.ID"><button class="w3-button w3-black ">Buy now <i class="fa fa-shopping-cart"></i></button></a> |
-                    </div>
-
                     @*<div class="w3-display-middle w3-display-hover">
-                            <a asp-controller="Payments" asp-action="Create" asp-route-id="@item.ID"><button class="w3-button w3-black ">Buy now <i class="fa fa-shopping-cart"></i></button></a> |
-                        </div>*@
+                        <a asp-action="Edit" asp-route-id="@item.ID"><button class="w3-button w3-black ">Buy now <i class="fa fa-shopping-cart"></i></button></a> |
+                    </div>*@
+
+                    <div class="w3-display-middle w3-display-hover">
+                            <a asp-controller="Payments" asp-action="CreateCC" ><button class="w3-button w3-black ">Buy now<i class="fa fa-shopping-cart"></i></button></a>
+                        </div>
                 </div>
                 <p>@Html.DisplayFor(modelItem => item.ProductName)<br><b>@Html.DisplayFor(modelItem => item.ProductPrice)</b></p>
             </div>

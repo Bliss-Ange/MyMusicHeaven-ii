@@ -4,37 +4,86 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<style>
 
-<h4>Product</h4>
+    #date {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+
+    h1 {
+        font-family: arial black;
+        color: #8f5f5f;
+    }
+
+    label {
+        font-family: arial black;
+    }
+
+    input[type=text], select {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        background-color: #6d7a76;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: arial black;
+    }
+
+        input[type=submit]:hover {
+            background-color: #8f5f5f;
+        }
+</style>
+
+<h1>Create Product</h1>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
-                <input asp-for="ProductName" class="form-control" />
+                <label asp-for="ProductName" ></label>
+                <input asp-for="ProductName" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StockInDate" class="control-label"></label>
-                <input asp-for="StockInDate" class="form-control" />
+                <label asp-for="StockInDate" ></label>
+                <input asp-for="StockInDate"  id="date" />
                 <span asp-validation-for="StockInDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
+                <label asp-for="Category" ></label>
+                <input asp-for="Category" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProductPrice" class="control-label"></label>
-                <input asp-for="ProductPrice" class="form-control" />
+                <label asp-for="ProductPrice" ></label>
+                <input asp-for="ProductPrice" />
                 <span asp-validation-for="ProductPrice" class="text-danger"></span>
             </div>
             <div class="form-group"> 
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
+                <label asp-for="Rating" ></label>
+                <input asp-for="Rating" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
             @*ProductImagetry*@
@@ -58,7 +107,7 @@
             <span asp-validation-for="ProductPicture" class="text-danger"></span>
         </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="primary" />
             </div>
         </form>
     </div>

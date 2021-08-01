@@ -11,10 +11,6 @@
       "type": "storage",
       "connectionId": "BlobStorageConnection"
     },
-    "appInsights1": {
-      "type": "appInsights",
-      "connectionId": "APPINSIGHTS_CONNECTIONSTRING"
-    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "MyMusicHeavenContextConnection"
@@ -30,6 +26,10 @@
     "mssql3": {
       "type": "mssql",
       "connectionId": "MyMusicHeavenContext1"
+    },
+    "appInsights1": {
+      "type": "appInsights",
+      "connectionId": "APPINSIGHTS_CONNECTIONSTRING"
     }
   }
 }

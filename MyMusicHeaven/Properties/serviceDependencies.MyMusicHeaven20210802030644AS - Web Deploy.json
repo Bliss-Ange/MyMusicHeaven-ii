@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Insights/components/MyMusicHeaven",
+      "type": "appInsights.azure",
+      "connectionId": "APPINSIGHTS_CONNECTIONSTRING",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/mymusicheavendbserver/databases/MyMusicHeavendb1",
+      "type": "mssql.azure",
+      "connectionId": "MyMusicHeavenContextConnection",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/mymusicheavendbserver/databases/MyMusicHeavendb1",
+      "type": "mssql.azure",
+      "connectionId": "MyMusicHeavenNewContext",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql4": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/mymusicheavendbserver/databases/MyMusicHeavendb1",
+      "type": "mssql.azure",
+      "connectionId": "MusicHeavenDatabase",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql3": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/mymusicheavendbserver/databases/MyMusicHeavendb1",
+      "type": "mssql.azure",
+      "connectionId": "MyMusicHeavenContext1",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

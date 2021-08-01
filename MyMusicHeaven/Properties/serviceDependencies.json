@@ -1,5 +1,20 @@
 {
   "dependencies": {
+    "secrets1": {
+      "type": "secrets"
+    },
+    "storage1": {
+      "type": "storage",
+      "connectionId": "tablestorageconnection"
+    },
+    "storage2": {
+      "type": "storage",
+      "connectionId": "BlobStorageConnection"
+    },
+    "appInsights1": {
+      "type": "appInsights",
+      "connectionId": "APPINSIGHTS_CONNECTIONSTRING"
+    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "MyMusicHeavenContextConnection"
@@ -8,16 +23,13 @@
       "type": "mssql",
       "connectionId": "MyMusicHeavenNewContext"
     },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "MusicHeavenDatabase"
+    },
     "mssql3": {
       "type": "mssql",
       "connectionId": "MyMusicHeavenContext1"
-    },
-    "secrets1": {
-      "type": "secrets"
-    },
-    "storage1": {
-      "type": "storage",
-      "connectionId": "tablestorageconnection"
     }
   }
 }

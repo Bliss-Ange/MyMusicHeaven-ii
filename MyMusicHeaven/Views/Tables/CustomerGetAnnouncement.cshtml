@@ -3,6 +3,8 @@
     ViewData["Title"] = "CustomerGetAnnouncement";
 }
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
 
     h1 {
@@ -47,6 +49,7 @@
 </style>
 
 <body>
+
     <center>
         <h1>Announcement</h1>
         <h5>Get The Latest Announcement From Your Artist Now!</h5><br />
@@ -54,11 +57,11 @@
         <div>
             <form method="get" action="getall">
                 <div>
-                    <label>Enter Artist Name</label><br />
+                    <label>Your Artist 👇</label><br />
                     <input type="text" value="" name="PartitionName" required />
                 </div>
                 <div>
-                    <label>Enter Artist Name</label><br />
+                    <label>What you are looking for?</label><br />
                     <input type="text" value="" name="RowName" required />
                 </div>
                 <div>
@@ -67,7 +70,7 @@
             </form>
         </div>
     </center>
-
+    <!---->
 
     @if (ViewBag.msg != null)
     {

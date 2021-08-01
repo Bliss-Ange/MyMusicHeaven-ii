@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>c41559e5-d575-468c-bd2d-d709f8d34d9a</UserSecretsId>
-    <ApplicationInsightsResourceId>/subscriptions/03fb98d3-8711-46d9-a01e-d51bca4529a5/resourcegroups/ddaclab12/providers/Microsoft.Insights/components/MyMusicHeavenAI</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/12793d6e-4fc6-44a3-9ad7-165a3e4ee26f/resourceGroups/DefaultResourceGroup-SEA/providers/microsoft.insights/components/MyMusicHeaven</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>

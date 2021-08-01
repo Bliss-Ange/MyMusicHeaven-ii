@@ -21,12 +21,6 @@
       "connectionId": "tablestorageconnection",
       "secretStore": "LocalSecretsFile"
     },
-    "appInsights1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Insights/components/MyMusicHeavenAI",
-      "type": "appInsights.azure",
-      "connectionId": "APPINSIGHTS_CONNECTIONSTRING",
-      "secretStore": "LocalSecretsFile"
-    },
     "storage2": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/musicheavenstorage",
       "type": "storage.azure",
@@ -37,6 +31,12 @@
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/mymusicheavendbserver/databases/MyMusicHeaven_db",
       "type": "mssql.azure",
       "connectionId": "MusicHeavenDatabase",
+      "secretStore": "LocalSecretsFile"
+    },
+    "appInsights1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/MyMusicHeaven",
+      "type": "appInsights.azure",
+      "connectionId": "APPINSIGHTS_CONNECTIONSTRING",
       "secretStore": "LocalSecretsFile"
     }
   }

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "ListBlobAsGallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+        h1 {
+            font-family: arial black;
+            color: #8f5f5f;
+        }
+
+        p.solid {
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<h1>Picture Gallery</h1>
+<br />
+<div class="container mt-10">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            string[] imagearray = item.Split('#');
+            <div class="col-md-4 p-1 align-middle text-center align-items-center" style="border: 4px solid #b28b8b;">
+                <img src="@imagearray[1]" width="250" height="350" />
+                <br />
+                <h6><label style="color:#493030">Image Name: </label></h6>
+                <p><label style="color:#493030">@imagearray[0]</label></p>
+                <a asp-route-imagename="@imagearray[0]" asp-action="deleteblob"><button class="p-1">Delete</button></a>
+                <a asp-route-imagename="@imagearray[0]" asp-route-url="@imagearray[1]" asp-action="downloadblob"><button class="p-1">Download</button></a>
+            </div>
+            <br />
+            
+        }
+    </div>
+</div>   
+
+
+@if (ViewBag.msg != null)
+{
+    <script> alert("@ViewBag.msg"); </script>
+}

@@ -1,0 +1,219 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The CHATBOT css -->
+<link rel="stylesheet" type="text/css" href="css/chatbot.css">
+
+<!-- The CHATBOT js -->
+<link rel="stylesheet" type="text/css" href="js/chatbot.js">
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <!--<div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>-->
+    <!-- Float links to the right. Hide them on small screens -->
+    <!--<div class="w3-right w3-hide-small">
+                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            </div>
+        </div>
+    </div>-->
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-48 w3-white">
+        <h1 class="w3-xxxlarge"><b>MY MUSIC HEAVEN</b></h1>
+        <h6>Welcome to the heaven of <span class="w3-tag">KPOP's world</span></h6>
+    </header>
+
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="w3-image" src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/header.jpg" alt="Architecture" width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>MUSIC</b></span> <span class="w3-hide-small w3-text-light-grey">Heaven</span></h1>
+        </div>
+    </header>
+
+    <div class="w3-bar w3-black w3-hide-small">
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-snapchat"></i></a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-flickr"></i></a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
+
+    </div><br /><br />
+
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">14+</span><br>
+            KPOP Partners
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">55+</span><br>
+            Projects Done
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">1000+</span><br>
+            Happy Clients
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">3+</span><br>
+            Year
+        </div>
+    </div>
+
+
+
+
+
+    <br /><br />
+    <!-- Event Section -->
+    @*<div class="w3-container w3-padding w3-black">
+            <h4>Events</h4>
+        </div>*@
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Events</h3>
+    <!-- Slides -->
+    <div class="w3-content w3-section" style="max-width:500px">
+        <img class="mySlides" src="/img/1.jpg" style="width:100%">
+        <img class="mySlides" src="/img/2.jpg" style="width:100%">
+        <img class="mySlides" src="/img/3.jpg" style="width:100%">
+    </div><br /><br />
+
+    <script>
+        var myIndex = 0;
+
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            var dots = document.getElementsByClassName("dot");
+
+
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+
+            setTimeout(carousel, 3000);
+        }
+    </script>
+
+
+
+    <!-- About Us content -->
+    <div class="w3-content">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
+        <!-- About Section -->
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/jhope.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <p class="w3-large">Daily K Pop News is one of the most viewed English K-Pop sites in the world.  It was founded in 2009 and has been uploading a content stream of K-Pop news ever since. They are really engaged with their audience and have close relationships with K-Pop bloggers and fans from around the world. Fans can guest post articles regarding their favorite groups and the reasons behind their love for them and some shared experiences attending concerts. In addition, they even have a section on how to start a K-Pop blog and make money from it.</p>
+                <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+
+
+
+        <!-- Subscribe -->
+        <div class="w3-white w3-margin">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Subscribe</h3>
+            <div class="w3-container w3-white">
+                <p>Enter your e-mail below and get notified on the latest updates and events.</p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+                <p><button type="button" onclick="document.getElementById('subscribe').style.display='block'" class="w3-button w3-block w3-red">Subscribe</button></p>
+            </div>
+        </div>
+
+        <!-- Subscribe Modal -->
+        <div id="subscribe" class="w3-modal w3-animate-opacity">
+            <div class="w3-modal-content" style="padding:32px">
+                <div class="w3-container w3-white">
+                    <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+                    <h2 class="w3-wide">THANK YOU!</h2>
+                    <p>Thank you for your subscribing. Looking forward for our updates.</p>
+                    <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Done</button>
+                </div>
+            </div>
+        </div><br />
+
+        <!-- Image of location/map -->
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Location</h3><p></p>
+        <div class="w3-container">
+            <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/map.jpg" class="w3-image" style="width:100%">
+        </div><br />
+
+
+        <!-- Footer Section -->
+        <footer class="w3-container w3-padding-32 w3-center" id="about">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"></h3>
+            <p style="font-size:11px">
+                COMPANY : 뮤직코리아   CEO : 진경주   Business Registration No : 141-81-20515 [Operators Information]    E-commerce Permit : 2010-경기파주-2554
+                ADDRESS : 99, Odo-ro, Paju-si, Gyeonggi-do, 10864 Republic of Korea    Information Manager : 박찬수    E-mail : woo680821@naver.com
+                Copyright © 2014 Music Korea All rights reserved.
+            </p>
+        </footer>
+        <img src="/img/chatbot.png"
+             class="open-button" onclick="openForm()">
+        <div class="chat-popup" id="chatbot">
+            <form action="/action_page.php" class="form-container">
+                <h1>Chat</h1>
+
+                <label for="msg"><b>Chat with Chatbot for inquiries</b></label>
+                <iframe src='https://webchat.botframework.com/embed/ChatbotXY?s=WNq7u8Fge-8.I3TdpEQnswRJcecMlnFEZXV2h3ZPdeo_kkfwTJVVClw'
+                        style='min-width: 200px; width: 100%; min-height: 350px;'>
+                </iframe>
+
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+
+        </div>
+
+</body>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    //for Chatbot
+    function openForm() {
+        document.getElementById("chatbot").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("chatbot").style.display = "none";
+    }
+</script>

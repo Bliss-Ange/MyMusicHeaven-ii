@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "AddEntities";
+}
+
+<h1>All Announcements</h1>
+@if (ViewBag.msg != null)
+{
+    <script>alert("@ViewBag.msg");</script>
+    <p>No insertion happened due to error!</p>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Announcement Date Release</th>
+            <th>Announcement</th>
+            <th>HTTP Status Code</th>
+        </tr>
+        @foreach (var result in Model)
+        {
+            <tr>
+                @{var displayresult = result.Result as
+                  MyMusicHeaven.Models.AnnouncementEntity; }
+                <td>@displayresult.PartitionKey</td>
+                <td>@displayresult.RowKey</td>
+                <td>@displayresult.Announcement_Date</td>
+                <td>@displayresult.Announcement</td>
+                <td>@result.HttpStatusCode</td>
+            </tr>
+        }
+    </table>
+}
+

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<MyMusicHeaven.Models.Product>
+
+
+@{
+    ViewData["Title"] = "CustomerProduct";
+}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+    h1 {
+        font-family: arial black;
+        color: #8f5f5f;
+    }
+
+    label {
+        font-family: arial black;
+    }
+
+    input[type=text], select {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        background-color: #6d7a76;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: arial black;
+    }
+
+        input[type=submit]:hover {
+            background-color: #8f5f5f;
+        }
+</style>
+
+<body>
+    <h1>Products</h1>
+    <h6 style="color: red">**Login to buy the products**</h6>
+    <br />
+    <form>
+        <!--Type product name column-->
+        <div>
+            <label>Enter the product name that you want to search: </label><br />
+            <input type="text" name="SearchString" />
+        </div>
+        <!-- Dropdown list for product type-->
+        <div>
+            <label>Product Category:</label><br />
+            @Html.DropDownList("Category", "All")
+        </div>
+        <div>
+            <input type="submit" value="Search Product" />
+        </div>
+        <br /><br /><br />
+    </form>
+
+
+    @foreach (var item in Model)
+    {
+
+
+        <div class="w3-col l3 s6" style="margin-left:150px">
+            <div class="w3-container">
+                <div class="w3-display-container">
+                    @Html.DisplayNameFor(model => item.ProductPicture)
+                    @if (item.ProductPicture != null)
+                    {
+                        <img id="profilePicture" style="width:350px;height:350px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(item.ProductPicture))" style="width:100%">
+                    }
+                    <span class="w3-tag w3-display-topleft">New Product</span>
+                    @*<div class="w3-display-middle w3-display-hover">
+                            <button class="w3-button w3-black ">Buy now <i class="fa fa-shopping-cart"></i></button>
+                        </div>*@
+
+                </div>
+                <p>@Html.DisplayFor(modelItem => item.ProductName)<br><b>RM @Html.DisplayFor(modelItem => item.ProductPrice)</b></p>
+
+            </div>
+
+        </div>
+
+
+
+    }
+    <br />
+    <br />
+    <br />
+</body>
+
+
+

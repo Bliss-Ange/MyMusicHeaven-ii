@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "CustomerGetAnnouncement";
+}
+
+<style>
+
+    h1 {
+        font-family: arial black;
+        color: #8f5f5f;
+    }
+
+    h5 {
+        font-family: arial black;
+    }
+
+    label {
+        font-family: arial black;
+    }
+
+    input[type=text], select {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        background-color: #6d7a76;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: arial black;
+    }
+
+        input[type=submit]:hover {
+            background-color: #8f5f5f;
+        }
+</style>
+
+<body>
+    <center>
+        <h1>Announcement</h1>
+        <h5>Get The Latest Announcement From Your Artist Now!</h5><br />
+
+        <div>
+            <form method="get" action="getall">
+                <div>
+                    <label>Enter Artist Name</label><br />
+                    <input type="text" value="" name="PartitionName" required />
+                </div>
+                <div>
+                    <label>Enter Artist Name</label><br />
+                    <input type="text" value="" name="RowName" required />
+                </div>
+                <div>
+                    <input type="submit" value="Search" name="submit" />
+                </div>
+            </form>
+        </div>
+    </center>
+
+
+    @if (ViewBag.msg != null)
+    {
+        <script>alert("@ViewBag.msg");</script>
+    }
+
+</body>

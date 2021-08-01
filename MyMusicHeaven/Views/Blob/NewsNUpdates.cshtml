@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewData["Title"] = "NewsNUpdates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Oswald"
+    }
+
+    body {
+        font-family: "Open Sans"
+    }
+</style>
+<body class="w3-light-grey">
+
+    <div class="w3-content" style="max-width:1600px">
+
+        <!-- Image header -->
+        <header class="w3-display-container w3-wide" id="home">
+            <img class="w3-image" src="https://mymusicheavenstorage.blob.core.windows.net/musicblob/bbh.gif" width="1600" height="1060">
+            <div class="w3-display-left w3-padding-large">
+                <h1 class="w3-text-white">My Music Heaven</h1>
+                <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>News and Latest Update</b></h1>
+            </div>
+        </header>
+
+        <!-- Grid -->
+        <div class="w3-row w3-padding w3-border">
+
+            <!-- Blog entries -->
+            <div class="w3-col l8 s12">
+
+                <!-- Blog entry -->
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-center">
+                        <h3>K-pop singer D.O. from Exo debuts first EP ‘Empathy’, the latest in the group’s stellar line-up of solo releases</h3>
+                        <h5>Title description, <span class="w3-opacity">May 6, 2021</span></h5>
+                    </div>
+
+                    <div class="w3-justify">
+                        <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/bbh2.jpg" style="width:100%" class="w3-padding-16">
+                        <p><strong>On Monday, </strong> K-pop singer D.O. released his debut solo EP, Empathy.</p>
+                        <p>Known as one of K-pop group Exo’s primary vocalists and as a popular actor, D.O.’s eight-track Empathy is an easy-listening album, based firmly in acoustic pop and R&B.</p>
+                        <p>Fronted by the ukulele-infused single Rose, the album features songs not only in Korean but also English and Spanish. They create a musical environment that is both romantic and poignant.</p>
+                        <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+                        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+                        <p class="w3-clear"></p>
+                        <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+                            <hr>
+                            <div class="w3-col l2 m3">
+                                <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/profile pic 1.jpg" style="width:90px;">
+                            </div>
+                            <div class="w3-col l10 m9">
+                                <h4>George <span class="w3-opacity w3-medium">May 3, 2015, 6:32 PM</span></h4>
+                                <p>Great blog post! Following</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Blog entry -->
+                <div class="w3-container w3-white w3-margin w3-padding-large">
+                    <div class="w3-center">
+                        <h3>Covid-19 in K-pop: the industry must stop putting profits before its stars as Korea deals with latest outbreak</h3>
+                        <h5> <span class="w3-opacity">April 29, 2021</span></h5>
+                    </div>
+
+                    <div class="w3-justify">
+                        <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/kpop-news-and-update-2.jpg" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+                        <p><strong>Four K-pop singers</strong> have tested positive for Covid-19 this week and numerous others have been tested, with many opting to isolate for the suggested 14-day quarantine period.</p>
+                        <p>Luckily, it seems that none of the stars has had to be treated in hospital and hopefully it will remain that way. Now the K-pop industry needs to adjust to the new reality or risk a completely avoidable industry-wide coronavirus outbreak.</p>
+                        <p>The weekly music shows where dozens of K-pop stars congregate and perform, and the upcoming end-of-year awards shows are still moving forward. As South Korea reaches a nine-month high of coronavirus cases, the industry is risking the health of stars while it continues to conduct business as usual and chase profits.</p>
+                        <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+                        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Replies  </b> <span class="w3-tag w3-white">2</span></button></p>
+                        <p class="w3-clear"></p>
+
+                        <!-- Example of comment field -->
+                        <div id="demo2" style="display:none">
+                            <div class="w3-row">
+                                <hr>
+                                <div class="w3-col l2 m3">
+                                    <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/profilepic2.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Amber <span class="w3-opacity w3-medium">April 26, 2015, 10:52 PM</span></h4>
+                                    <p>Sad to hear that....</p><br>
+                                </div>
+                            </div>
+                            <div class="w3-row w3-margin-bottom">
+                                <div class="w3-col l2 m3">
+                                    <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/profilepic3.jpg" style="width:90px;">
+                                </div>
+                                <div class="w3-col l10 m9">
+                                    <h4>Angie <span class="w3-opacity w3-medium">April 23, 2015, 9:12 PM</span></h4>
+                                    <p>wish Covid situation is no longer disturbing our life</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END BLOG ENTRIES -->
+            </div>
+
+            <!-- About/Information menu -->
+            <div class="w3-col l4">
+                <!-- About Card -->
+                <div class="w3-white w3-margin">
+                    <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/bbh3.png" style="width:100%" class="w3-grayscale">
+                    <div class="w3-container w3-black">
+                        <h4>BTS make history again as songs Butter and Permission to Dance take turns at No 1 on Billboard’s Hot 100 chart</h4>
+                        <p>
+                            Hardly a day goes by without BTS making history, and the K-pop superstars have done it yet again.
+
+                            A few weeks ago, the seven-member Korean boy band hit No 1 on the US Billboard Hot 100 singles chart with Butter. It was knocked off top spot by another of their songs, Permission to Dance, before Butter bounced back to replace it at No 1 again this week.
+
+                            It was another landmark for BTS: Billboard reported that the return of Butter to the top of the charts made the K-pop group the first act to replace a No 1 song with a previous No 1 song of their own, without any other group or singer holding top spot in between.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Inspiration -->
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Buyer Featured Unboxing</h4>
+                    </div>
+                    <div class="w3-row-padding w3-white">
+                        <div class="w3-col s6">
+                            <p><img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/kpopalbum1.jpg" alt="Jeans" style="width:100%"></p>
+                            <p><img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/kpopalbum2.jpg" alt="Jeans" style="width:100%"></p>
+                        </div>
+                        <div class="w3-col s6">
+                            <p><img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/kpopalbum3.jpg" alt="Men in Hats" style="width:100%" class="w3-grayscale"></p>
+                            <p><img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/kpopalbum4.jpg" alt="Jeans" style="width:100%"></p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!-- Tags -->
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Tags</h4>
+                    </div>
+                    <div class="w3-container w3-white">
+                        <p>
+                            <span class="w3-tag w3-black w3-margin-bottom">Fashion</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">BTS</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Blackpink</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Album</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">D.O.</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Twice</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Kpops</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Solo</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Mamamoo</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Singing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baekhyun</span>
+                            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">EXO</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Trends</span>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="w3-white w3-margin">
+                    <div class="w3-container w3-padding w3-black">
+                        <h4>Follow Me</h4>
+                    </div>
+                    <div class="w3-container w3-xlarge w3-padding">
+                        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                        <i class="fa fa-instagram w3-hover-opacity"></i>
+                        <i class="fa fa-snapchat w3-hover-opacity"></i>
+                        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                        <i class="fa fa-twitter w3-hover-opacity"></i>
+                        <i class="fa fa-linkedin w3-hover-opacity"></i>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- END About/Intro Menu -->
+            </div>
+
+            <!-- END GRID -->
+        </div>
+
+        <!-- END w3-content -->
+    </div>
+
+    <!-- Subscribe Modal -->
+    <div id="subscribe" class="w3-modal w3-animate-opacity">
+        <div class="w3-modal-content" style="padding:32px">
+            <div class="w3-container w3-white">
+                <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+                <h2 class="w3-wide">SUBSCRIBE</h2>
+                <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+                <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+                <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
+}
+    </script>
+
+</body>
+
+
+

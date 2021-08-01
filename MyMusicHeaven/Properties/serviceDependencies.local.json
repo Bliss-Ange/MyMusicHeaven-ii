@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "MyMusicHeavenContextConnection"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "MyMusicHeavenNewContext"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "MyMusicHeavenContext1"
+    },
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "storage1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/musicheavenstorage",
+      "type": "storage.azure",
+      "connectionId": "tablestorageconnection",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
+}

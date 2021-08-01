@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "PosterGallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+
+    .cover {
+        max-width: 100%;
+        height: auto;
+    }
+    p.thick {
+        font-weight: bold;
+    }
+</style>
+<body>
+    <h2>✨ Welcome to the Poster Gallery ✨ <br /></h2>
+    <div class="p-3 mb-2 bg-light">
+        <img src="https://mymusicheavenstorage.blob.core.windows.net/vidcontainer/Poster Gallery.png" class="cover" />
+    </div>
+    <br />
+    <h2 style="color:#8f5f5f">
+        ✨ Download your favorite idol's poster now! ✨
+    </h2>
+    <p style="color:#9b6868" class="thick">
+        ☁️ All the poster shown here are ths poster that are purely fan-made by the fans and famdom. It is not the original poster come along with the album.
+        Please purchase the authetic album if you wish to own any of the legit poster. <br />
+        The company do not encourage the unauthorised artist related merchants are privately leak with not proper purchase. <br />
+        Respect the song author, singer, and the production team.☁️
+    </p>
+    <div class="container mt-10">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                string[] imagearray = item.Split('#');
+                <div class="col-md-4 p-1 align-middle text-center align-items-center" style="border: 4px solid #b28b8b;">
+                    <img src="@imagearray[1]" width="250" height="350" />
+                    <br />
+                    <h6><label style="color:#493030">Image Name: </label></h6>
+                    <p><label style="color:#493030">@imagearray[0]</label></p>
+                    
+                    <a asp-route-imagename="@imagearray[0]" asp-route-url="@imagearray[1]" asp-action="downloadblob"><button>Download</button></a>
+                </div>
+                <br />
+
+            }
+        </div>
+    </div>
+</body>
+
+@if (ViewBag.msg != null)
+{
+    <script> alert("@ViewBag.msg"); </script>
+}
+

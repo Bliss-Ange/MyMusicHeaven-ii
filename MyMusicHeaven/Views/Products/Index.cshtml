@@ -1,0 +1,118 @@
+﻿@model IEnumerable<MyMusicHeaven.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+
+    h1 {
+        font-family: arial black;
+        color: #8f5f5f;
+    }
+
+    label {
+        font-family: arial black;
+    }
+
+
+    input[type=text], select {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        background-color: #6d7a76;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: arial black;
+    }
+
+        input[type=submit]:hover {
+            background-color: #8f5f5f;
+        }
+</style>
+<body>
+    <h1>Products List</h1><br />
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <form>
+        <!--Type product name column-->
+        <div>
+            <label>Enter the product name that you want to search:</label><br />
+            <input type="text" name="SearchString" />
+        </div>
+        <!-- Dropdown list for product type-->
+        <div>
+            <label>Product Category:</label><br />
+            @Html.DropDownList("Category", "All")
+        </div>
+        <div>
+            <input type="submit" value="Search Product" />
+        </div>
+        <br /><br /><br />
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StockInDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StockInDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "MyMusicHeavenContextConnection"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "MyMusicHeavenNewContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "MyMusicHeavenContext1"
+    },
+    "secrets1": {
+      "type": "secrets"
+    },
+    "storage1": {
+      "type": "storage",
+      "connectionId": "tablestorageconnection"
+    }
+  }
+}

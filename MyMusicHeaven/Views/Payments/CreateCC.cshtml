@@ -62,17 +62,17 @@
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="CustomerName"></label>
+                    <label asp-for="CustomerName"></label><br />
                     <input asp-for="CustomerName" />
                     <span asp-validation-for="CustomerName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="PaymentDate"></label>
+                    <label asp-for="PaymentDate"></label><br />
                     <input asp-for="PaymentDate" id="date" />
                     <span asp-validation-for="PaymentDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="TotalPayment"></label>
+                    <label asp-for="TotalPayment"></label><br />
                     <input asp-for="TotalPayment" />
                     <span asp-validation-for="TotalPayment" class="text-danger"></span>
                 </div>

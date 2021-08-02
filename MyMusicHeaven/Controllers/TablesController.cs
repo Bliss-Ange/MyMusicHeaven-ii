@@ -190,6 +190,39 @@ namespace MyMusicHeaven.Controllers
             return RedirectToAction("CustomerGetAnnouncement", "Tables", new { Message = message });
         }
 
+
+        /*public async Task <ActionResult> DisplayAsync (string PartitionKey)
+        {
+       
+            CloudTable tableinfo = getTableStorageInformation();
+
+            string message = null;
+            try
+            {
+                TableQuery<AnnouncementEntity> query = new TableQuery<AnnouncementEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, PartitionKey));
+                List<AnnouncementEntity> announcementList = new List<AnnouncementEntity>();
+                TableContinuationToken token = null;
+
+                do
+                {
+                    TableQuerySegment<AnnouncementEntity> queryResult = tableinfo.ExecuteQuerySegmentedAsync(query, token).Result;
+                    token = queryResult.ContinuationToken;
+                    foreach (AnnouncementEntity ann in queryResult.Results)
+                    {
+                        announcementList.Add(ann);
+                    }
+                } while (token != null);
+                return View(announcementList);
+
+            }
+            catch (Exception ex)
+            {
+                message = "Unable to get the data. Error : " + ex.ToString();
+            }
+
+            return RedirectToAction("CustomerGetAnnouncement", "Tables", new { Message = message });
+
+        }*/
         public ActionResult DeleteEntity(string PartitionKey, string RowKey)
         {
             CloudTable tableinfo = getTableStorageInformation();

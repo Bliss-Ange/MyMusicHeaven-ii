@@ -52,6 +52,13 @@ namespace MyMusicHeaven.Controllers
 
         }
 
+        public ActionResult AddAnnouncement()
+        {
+
+            return View();
+
+        }
+
         public ActionResult AddEntity(string PartitionKey, string RowKey, DateTime Announcement_Date, string Announcement)
         {
        
@@ -118,49 +125,37 @@ namespace MyMusicHeaven.Controllers
             return View();
         }
 
-        public ActionResult SearchAnnouncement(string Message = null)
-        {
-            ViewBag.msg = Message;
-            return View();
-        }
-
-        public ActionResult CustomerGetAnnouncement(string Message = null)
-        {
-            ViewBag.msg = Message;
-            return View();
-        }
-
-        public ActionResult getSingleEntity(string PartitionName, string RowName)
+        public ActionResult SearchAnnouncement()
         {
             CloudTable tableinfo = getTableStorageInformation();
 
-            string message = null; 
+            string message = null;
+
             try
             {
-                TableOperation retrieve = TableOperation.Retrieve<AnnouncementEntity>(PartitionName, RowName);
-                TableResult result = tableinfo.ExecuteAsync(retrieve).Result;
-                if (result.Etag != null)
+                TableQuery<AnnouncementEntity> query = new TableQuery<AnnouncementEntity>();
+                List<AnnouncementEntity> announcementList = new List<AnnouncementEntity>();
+                TableContinuationToken token = null;
+                do
                 {
-                    //convert the announcement info from tableresult to become announcement entity type
-                    var announcement = result.Result as AnnouncementEntity; 
-                    return View(announcement);
-                }
-                    
-                else
-                {
-                    message = "Data not found in the table!";
-                }
-                    
+                    TableQuerySegment<AnnouncementEntity> queryResult = tableinfo.ExecuteQuerySegmentedAsync(query, token).Result;
+                    token = queryResult.ContinuationToken;
+                    foreach (AnnouncementEntity ann in queryResult.Results)
+                    {
+                        announcementList.Add(ann);
+                    }
+                } while (token != null);
+                return View(announcementList);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 message = "Unable to get the data. Error : " + ex.ToString();
             }
-
-            return RedirectToAction("SearchAnnouncement", "Tables", new { Message = message});
+            return RedirectToAction("SearchAnnouncement", "Tables", new { Message = message });
         }
 
-        public ActionResult getAll(string PartitionName, string RowName)
+
+        public ActionResult getSingleEntity(string PartitionName, string RowName)
         {
             CloudTable tableinfo = getTableStorageInformation();
 
@@ -180,6 +175,76 @@ namespace MyMusicHeaven.Controllers
                 {
                     message = "Data not found in the table!";
                 }
+
+            }
+            catch (Exception ex)
+            {
+                message = "Unable to get the data. Error : " + ex.ToString();
+            }
+
+            return RedirectToAction("SearchAnnouncement", "Tables", new { Message = message });
+        }
+
+        public ActionResult CustomerGetAnnouncement(string Message = null)
+        {
+            ViewBag.msg = Message;
+            return View();
+        }
+
+
+        /*public ActionResult getAll(string PartitionName, string RowName)
+        {
+            CloudTable tableinfo = getTableStorageInformation();
+
+            string message = null;
+            try
+            {
+                TableOperation retrieve = TableOperation.Retrieve<AnnouncementEntity>(PartitionName, RowName);
+                TableResult result = tableinfo.ExecuteAsync(retrieve).Result;
+                if (result.Etag != null)
+                {
+                    //convert the announcement info from tableresult to become announcement entity type
+                    var announcement = result.Result as AnnouncementEntity;
+                    return View(announcement);
+                }
+
+                else
+                {
+                    message = "Data not found in the table!";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                message = "Unable to get the data. Error : " + ex.ToString();
+            }
+
+            return RedirectToAction("CustomerGetAnnouncement", "Tables", new { Message = message });
+        }*/
+
+        public ActionResult getAll(string PartitionKey)
+        {
+            CloudTable tableinfo = getTableStorageInformation();
+
+            string message = null;
+            try
+            {
+                var condition = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, PartitionKey);
+                var query = new TableQuery<AnnouncementEntity>().Where(condition);
+
+                List<AnnouncementEntity> announcementList = new List<AnnouncementEntity>();
+                TableContinuationToken token = null;
+
+                do
+                {
+                    TableQuerySegment<AnnouncementEntity> queryResult = tableinfo.ExecuteQuerySegmentedAsync(query, token).Result;
+                    token = queryResult.ContinuationToken;
+                    foreach (AnnouncementEntity ann in queryResult.Results)
+                    {
+                        announcementList.Add(ann);
+                    }
+                } while (token != null);
+                return View(announcementList);
 
             }
             catch (Exception ex)
@@ -243,12 +308,6 @@ namespace MyMusicHeaven.Controllers
             return RedirectToAction("SearchAnnouncement", "Tables", new { Message = message });
         }
 
-        public ActionResult AddAnnouncement()
-        {
-
-            return View();
-
-        }
 
     }
 

@@ -50,58 +50,60 @@
 </style>
 
 <body>
-    <h1>Products</h1>
-    <br />
-    <form>
-        <!--Type product name column-->
+    <div>
+        <h1>Products</h1>
+        <br />
         <div>
-            <label>Enter the product name that you want to search:</label><br />
-            <input type="text" name="SearchString" />
-        </div>
-        <!-- Dropdown list for product type-->
-        <div>
-            <label>Product Category:</label><br />
-            @Html.DropDownList("Category", "All")
-        </div>
-        <div>
-            <input type="submit" value="Search Product" />
-        </div>
-        <br /><br /><br />
-    </form>
-
-
-    @foreach (var item in Model)
-    {
-
-
-        <div class="w3-col l3 s6" style="margin-left:150px">
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    @Html.DisplayNameFor(model => item.ProductPicture)
-                    @if (item.ProductPicture != null)
-                    {
-                        <img id="profilePicture" style="width:350px;height:350px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(item.ProductPicture))" style="width:100%">
-                    }
-                    <span class="w3-tag w3-display-topleft">New Product</span>
-                    @*<div class="w3-display-middle w3-display-hover">
-                        <a asp-action="Edit" asp-route-id="@item.ID"><button class="w3-button w3-black ">Buy now <i class="fa fa-shopping-cart"></i></button></a> |
-                    </div>*@
-
-                    <div class="w3-display-middle w3-display-hover">
-                            <a asp-controller="Payments" asp-action="CreateCC" ><button class="w3-button w3-black ">Buy now<i class="fa fa-shopping-cart"></i></button></a>
-                        </div>
+            <form>
+                <!--Type product name column-->
+                <div>
+                    <label>Enter the product name that you want to search:</label><br />
+                    <input type="text" name="SearchString" />
                 </div>
-                <p>@Html.DisplayFor(modelItem => item.ProductName)<br><b>@Html.DisplayFor(modelItem => item.ProductPrice)</b></p>
-            </div>
-
+                <!-- Dropdown list for product type-->
+                <div>
+                    <label>Product Category:</label><br />
+                    @Html.DropDownList("Category", "All")
+                </div>
+                <div>
+                    <input type="submit" value="Search Product" />
+                </div>
+                <br /><br /><br />
+            </form>
         </div>
 
+        <div>
+            @foreach (var item in Model)
+            {
 
 
-    }
-    <br />
-    <br />
-    <br />
+                <div class="w3-col l3 s6" style="margin-left:150px; padding-bottom:100px">
+                    <div class="w3-container">
+                        <div class="w3-display-container">
+                            @Html.DisplayNameFor(model => item.ProductPicture)
+                            @if (item.ProductPicture != null)
+                            {
+                                <img id="profilePicture" style="width:350px;height:350px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(item.ProductPicture))" style="width:100%">
+                            }
+                            <span class="w3-tag w3-display-topleft">New Product</span>
+                            @*<div class="w3-display-middle w3-display-hover">
+                                <a asp-action="Edit" asp-route-id="@item.ID"><button class="w3-button w3-black ">Buy now <i class="fa fa-shopping-cart"></i></button></a> |
+                            </div>*@
+
+                            <div class="w3-display-middle w3-display-hover">
+                                <a asp-controller="Payments" asp-action="CreateCC"><button class="w3-button w3-black ">Buy now<i class="fa fa-shopping-cart"></i></button></a>
+                            </div>
+                        </div>
+                        <p>@Html.DisplayFor(modelItem => item.ProductName)<br><b>@Html.DisplayFor(modelItem => item.ProductPrice)</b></p>
+                    </div>
+
+                </div>
+            }
+            
+        </div>
+
+    </div>
+  
 </body>
 
 

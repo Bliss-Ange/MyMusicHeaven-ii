@@ -1,4 +1,5 @@
-﻿@model MyMusicHeaven.Models.AnnouncementEntity;
+﻿@model IEnumerable<MyMusicHeaven.Models.AnnouncementEntity>
+
 @{
     ViewData["Title"] = "getAll";
 }
@@ -69,12 +70,16 @@
                 <th>Announcement Release Date</th>
                 <th>Announcement</th>
             </tr>
-            <tr>
-                <td>@Model.PartitionKey</td>
-                <td>@Model.RowKey</td>
-                <td>@Model.Announcement_Date</td>
-                <td>@Model.Announcement</td> 
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PartitionKey</td>
+                    <td>@item.RowKey</td>
+                    <td>@item.Announcement_Date</td>
+                    <td>@item.Announcement</td>
+                </tr>
+            }
+
         </table>
     }
 </body>
